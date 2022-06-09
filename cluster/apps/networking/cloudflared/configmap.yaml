@@ -38,8 +38,8 @@ data:
     # This rule matches any traffic which didn't match a previous rule, and responds with HTTP 404.
     - service: http_status:404
     # -------------------- TODO: MAKE THIS CONFIGURABLE -----------------------------------------
-    - hostname: traefik
+    - hostname: traefik.teamkhunglong.com
       service: networking-traefik-9000
-    - hostname: dashboard
+    - hostname: traefik.teamkhunglong.com
       service: default-hajimari-3000
     # -------------------------------------------------------------------------------------------
