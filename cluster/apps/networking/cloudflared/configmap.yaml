@@ -40,8 +40,10 @@ data:
     - hostname: traefik.teamkhunglong.com
       service: https://traefik.networking.svc.cluster.local:443
       noTLSVerify: true
+      originServerName: traefik.teamkhunglong.com
     - hostname: dashboard.teamkhunglong.com
       service: https://traefik.networking.svc.cluster.local:443
+      originServerName: dashboard.teamkhunglong.com
       noTLSVerify: true
     # -------------------------------------------------------------------------------------------
     # This rule matches any traffic which didn't match a previous rule, and responds with HTTP 404.
