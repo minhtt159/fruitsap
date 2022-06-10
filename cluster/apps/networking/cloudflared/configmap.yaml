@@ -37,7 +37,10 @@ data:
     # - hostname: hello.example.com
     #   service: hello_world
     # -------------------- TODO: MAKE THIS CONFIGURABLE -----------------------------------------
-    - hostname: *.teamkhunglong.com
+    - hostname: traefik.teamkhunglong.com
+      service: https://traefik:443
+      noTLSVerify: true
+    - hostname: dashboard.teamkhunglong.com
       service: https://traefik:443
       noTLSVerify: true
     # -------------------------------------------------------------------------------------------
