@@ -18,7 +18,8 @@ data:
     # Autoupdates applied in a k8s pod will be lost when the pod is removed or restarted, so
     # autoupdate doesn't make sense in Kubernetes. However, outside of Kubernetes, we strongly
     # recommend using autoupdate.
-    autoupdate-freq: 6h
+    # autoupdate-freq: 6h
+    no-autoupdate: true
     # The `ingress` block tells cloudflared which local service to route incoming
     # requests to. For more about ingress rules, see
     # https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/configuration/ingress
@@ -36,10 +37,9 @@ data:
     # - hostname: hello.example.com
     #   service: hello_world
     # -------------------- TODO: MAKE THIS CONFIGURABLE -----------------------------------------
-    - hostname: traefik.teamkhunglong.com
+    - hostname: *.teamkhunglong.com
       service: https://traefik:443
-    - hostname: dashboard.teamkhunglong.com
-      service: https://traefik:443
+      noTLSVerify: true
     # -------------------------------------------------------------------------------------------
     # This rule matches any traffic which didn't match a previous rule, and responds with HTTP 404.
     - service: http_status:404
