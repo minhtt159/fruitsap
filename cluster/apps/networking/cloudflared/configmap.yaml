@@ -42,7 +42,8 @@ data:
       service: https://traefik.teamkhunglong.com
     - hostname: hajimari.teamkhunglong.com
       service: https://hajimari.teamkhunglong.com
-      noTLSVerify: true
+      originRequest:
+        noTLSVerify: true
     - hostname: proxmox.teamkhunglong.com
       service: https://192.168.178.9:8006
       originRequest:
