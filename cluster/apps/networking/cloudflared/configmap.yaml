@@ -40,6 +40,8 @@ data:
     # -------------------- TODO: MAKE THIS CONFIGURABLE -----------------------------------------
     - hostname: traefik.teamkhunglong.com
       service: https://traefik.teamkhunglong.com
+        originServerName: traefik.teamkhunglong.com
+        noTLSVerify: true
     - hostname: hajimari.teamkhunglong.com
       service: https://hajimari.teamkhunglong.com
       originRequest:
