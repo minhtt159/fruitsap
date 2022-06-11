@@ -36,7 +36,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
     traefik.ingress.kubernetes.io/router.middlewares: "networking-cloudflare-only@kubernetescrd"
 spec:
-  ingressClassName: "proxmox"
+  ingressClassName: "traefik"
   tls:
     - hosts:
         - "proxmox.${SECRET_DOMAIN}"
