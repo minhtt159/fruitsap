@@ -43,6 +43,9 @@ data:
     - hostname: hajimari.teamkhunglong.com
       service: https://hajimari.teamkhunglong.com
       noTLSVerify: true
+    - hostname: proxmox.teamkhunglong.com
+      service: https://192.168.178.9:8006
+      noTLSVerify: true
     # -------------------------------------------------------------------------------------------
     # This rule matches any traffic which didn't match a previous rule, and responds with HTTP 404.
     - service: http_status:404
