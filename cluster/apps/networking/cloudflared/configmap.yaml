@@ -36,10 +36,10 @@ data:
     # in the connection from cloudflared to your local service, not from the internet to cloudflared.
     - hostname: hello.teamkhunglong.com
       service: hello_world
-      noTLSVerify: true
     # -------------------- TODO: MAKE THIS CONFIGURABLE -----------------------------------------
     - hostname: traefik.teamkhunglong.com
       service: https://traefik.teamkhunglong.com
+      originRequest:
         originServerName: traefik.teamkhunglong.com
         noTLSVerify: true
     - hostname: hajimari.teamkhunglong.com
