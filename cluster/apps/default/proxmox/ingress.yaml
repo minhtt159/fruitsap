@@ -1,6 +1,6 @@
 ---
 apiVersion: networking.k8s.io/v1
-kind: Ingress
+kind: IngressBackend
 metadata:
   name: proxmox-dashboard
   namespace: default
