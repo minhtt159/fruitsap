@@ -1,3 +1,4 @@
+# yamllint disable
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -16,3 +17,10 @@ spec:
       # secretName: "proxmox-dashboard-tls"
   rules:
     - host: "proxmox.${SECRET_DOMAIN}"
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            serviceName: 192.168.178.9
+            servicePort: 8006
