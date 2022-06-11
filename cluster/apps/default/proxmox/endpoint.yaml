@@ -8,6 +8,4 @@ subsets:
   - addresses:
       - ip: 192.168.178.9
     ports:
-      - name: webui
-        port: 8006
-        protocol: TCP
+      - port: 8006
