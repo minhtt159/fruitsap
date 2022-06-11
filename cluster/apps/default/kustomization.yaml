@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - echo-server
   - hajimari
-  - proxmox
+  # - proxmox
