@@ -10,10 +10,10 @@ metadata:
     traefik.ingress.kubernetes.io/router.middlewares: "networking-cloudflare-only@kubernetescrd"
 spec:
   ingressClassName: "traefik"
-  # tls:
-  #   - hosts:
-  #       - "proxmox.${SECRET_DOMAIN}"
-  #     secretName: "proxmox-dashboard-tls"
+  tls:
+    - hosts:
+        - "proxmox.${SECRET_DOMAIN}"
+      secretName: "proxmox-dashboard-tls"
   rules:
     - host: "proxmox.${SECRET_DOMAIN}"
       http:
