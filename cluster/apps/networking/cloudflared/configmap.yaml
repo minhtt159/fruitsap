@@ -42,6 +42,11 @@ data:
       originRequest:
         originServerName: traefik.teamkhunglong.com
         noTLSVerify: true
+    - hostname: flux-receiver.teamkhunglong.com
+      service: https://flux-receiver.teamkhunglong.com
+      originRequest:
+        originServerName: flux-receiver.teamkhunglong.com
+        noTLSVerify: true
     - hostname: hajimari.teamkhunglong.com
       service: https://hajimari.teamkhunglong.com
       originRequest:
