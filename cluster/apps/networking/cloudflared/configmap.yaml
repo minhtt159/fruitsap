@@ -38,17 +38,22 @@ data:
       service: hello_world
     # -------------------- TODO: MAKE THIS CONFIGURABLE -----------------------------------------
     - hostname: traefik.teamkhunglong.com
-      service: https://traefik.teamkhunglong.com
+      service: https://traefik.networking:443
       originRequest:
         originServerName: traefik.teamkhunglong.com
         noTLSVerify: true
+    - hostname: echo-server.teamkhunglong.com
+      service: http://traefik.networking:80
+      originRequest:
+        originServerName: echo-server.teamkhunglong.com
+        noTLSVerify: true
     - hostname: flux-receiver.teamkhunglong.com
-      service: https://flux-receiver.teamkhunglong.com
+      service: https://traefik.networking:443
       originRequest:
         originServerName: flux-receiver.teamkhunglong.com
         noTLSVerify: true
     - hostname: hajimari.teamkhunglong.com
-      service: https://hajimari.teamkhunglong.com
+      service: https://traefik.networking:443
       originRequest:
         originServerName: hajimari.teamkhunglong.com
         noTLSVerify: true
