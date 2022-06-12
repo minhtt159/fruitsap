@@ -1,3 +1,4 @@
+# This is currently broken with v1.23.6+k3s1
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress

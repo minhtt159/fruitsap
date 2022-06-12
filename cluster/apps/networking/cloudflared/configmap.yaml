@@ -48,7 +48,7 @@ data:
         originServerName: hajimari.teamkhunglong.com
         noTLSVerify: true
     - hostname: proxmox.teamkhunglong.com
-      service: https://proxmox-dashboard.default
+      service: https://proxmox-dashboard.default:8006
       originRequest:
         originServerName: proxmox.teamkhunglong.com
         noTLSVerify: true

@@ -5,6 +5,8 @@ metadata:
   name: proxmox-dashboard
   namespace: default
 spec:
+  type: ClusterIP
+  clusterIP: None
   ports:
     - port: 443
       protocol: TCP
