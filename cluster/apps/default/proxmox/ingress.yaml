@@ -6,7 +6,7 @@ metadata:
   name: proxmox-dashboard
   namespace: default
   annotations:
-    # cert-manager.io/cluster-issuer: "letsencrypt-staging" # Overwrite certificate OR skip certificate
+    cert-manager.io/cluster-issuer: "letsencrypt-production" # Overwrite certificate OR skip certificate
     traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
     traefik.ingress.kubernetes.io/router.middlewares: "networking-cloudflare-only@kubernetescrd"
 spec:
