@@ -38,25 +38,13 @@ data:
       service: hello_world
     # -------------------- TODO: MAKE THIS CONFIGURABLE -----------------------------------------
     - hostname: traefik.teamkhunglong.com
-      service: https://traefik.networking:443
-      originRequest:
-        originServerName: traefik.teamkhunglong.com
-        noTLSVerify: true
+      service: https://traefik.teamkhunglong.com
     - hostname: echo-server.teamkhunglong.com
-      service: http://traefik.networking:80
-      originRequest:
-        originServerName: echo-server.teamkhunglong.com
-        noTLSVerify: true
+      service: http://echo-server.teamkhunglong.com
     - hostname: flux-receiver.teamkhunglong.com
-      service: https://traefik.networking:443
-      originRequest:
-        originServerName: flux-receiver.teamkhunglong.com
-        noTLSVerify: true
+      service: https://flux-receiver.teamkhunglong.com
     - hostname: hajimari.teamkhunglong.com
-      service: https://traefik.networking:443
-      originRequest:
-        originServerName: hajimari.teamkhunglong.com
-        noTLSVerify: true
+      service: https://hajimari.teamkhunglong.com
     - hostname: proxmox.teamkhunglong.com
       service: https://proxmox-dashboard.default:8006
       originRequest:
