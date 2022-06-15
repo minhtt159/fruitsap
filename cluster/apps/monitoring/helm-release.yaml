@@ -29,7 +29,30 @@ spec:
           requests:
             cpu: 200m
             memory: 200Mi
+          limits:
+            cpu: 500m
+            memory: 2048Mi
         podMonitorNamespaceSelector: {}
         podMonitorSelector:
           matchLabels:
             app.kubernetes.io/component: monitoring
+    grafana:
+      defaultDashboardsTimezone: {TIMEZONE}
+      ingress:
+        enabled: true
+        ingressClassName: "traefik"
+        annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-staging"
+          # hajimari.io/enable: "true"
+          # hajimari.io/icon: "weather-sunset"
+          traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+          traefik.ingress.kubernetes.io/router.middlewares: "networking-cloudflare-only@kubernetescrd"
+        hosts:
+          - host: "grafana.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - hosts:
+              - "grafana.${SECRET_DOMAIN}"
+            secretName: "grafana-tls"
