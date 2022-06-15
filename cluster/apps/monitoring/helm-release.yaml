@@ -45,8 +45,9 @@ spec:
         ingressClassName: "traefik"
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-staging"
-          # hajimari.io/enable: "true"
-          # hajimari.io/icon: "weather-sunset"
+          hajimari.io/enable: "true"
+          hajimari.io/appName: Grafana
+          hajimari.io/icon: chart-bar
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
           traefik.ingress.kubernetes.io/router.middlewares: "networking-cloudflare-only@kubernetescrd"
         hosts:
