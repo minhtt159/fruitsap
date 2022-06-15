@@ -40,8 +40,8 @@ spec:
       defaultDashboardsTimezone: {TIMEZONE}
       ingress:
         enabled: true
-        ingressClassName: "traefik"
         annotations:
+          kubernetes.io/ingress.class: "traefik"
           cert-manager.io/cluster-issuer: "letsencrypt-staging"
           # hajimari.io/enable: "true"
           # hajimari.io/icon: "weather-sunset"
