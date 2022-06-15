@@ -6,3 +6,5 @@ resources:
   - metallb-system.yaml
   - networking.yaml
   - system-upgrade.yaml
+  - nfs-provision.yaml
+  - monitoring.yaml
