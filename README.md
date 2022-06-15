@@ -516,18 +516,6 @@ The benefits of a public repository include:
   10. Optionally set your repository to Private in your repository settings.
 </details>
 
-## 👉 Troubleshooting
-
-Our [wiki](https://github.com/k8s-at-home/flux-cluster-template/wiki) (WIP, contributions welcome) is a good place to start troubleshooting issues. If that doesn't cover your issue, come join and say Hi in our [Discord](https://discord.gg/k8s-at-home) server by starting a new thread in the #kubernetes support channel.
-
-You may also open a issue on this GitHub repo or open a [discussion on GitHub](https://github.com/k8s-at-home/organization/discussions).
-
-## ❔ What's next
-
-The world is your cluster, see below for important things you could work on adding.
-
-Our Check out our [wiki](https://github.com/k8s-at-home/flux-cluster-template/wiki) (WIP, contributions welcome) for more integrations!
-
 ## 🤝 Thanks
 
 Big shout out to all the authors and contributors to the projects that we are using in this repository.
