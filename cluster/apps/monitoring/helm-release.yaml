@@ -39,7 +39,8 @@ spec:
             app.kubernetes.io/component: monitoring
     grafana:
       enabled: true
-      defaultDashboardsTimezone: {TIMEZONE}
+      defaultDashboardsTimezone: ${TIMEZONE}
+      adminPassword: ${GRAFANA_PASSWORD}
       ingress:
         enabled: true
         ingressClassName: "traefik"
