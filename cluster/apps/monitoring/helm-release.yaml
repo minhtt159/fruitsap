@@ -39,8 +39,7 @@ spec:
             app.kubernetes.io/component: monitoring
     grafana:
       enabled: true
-      defaultDashboardsTimezone: |
-        "${TIMEZONE}"
+      defaultDashboardsTimezone: "Europe/Amsterdam"
       admin:
         existingSecret: "grafana-password"
         userKey: admin-user
