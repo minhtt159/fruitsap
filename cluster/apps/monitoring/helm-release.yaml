@@ -40,7 +40,7 @@ spec:
     grafana:
       enabled: true
       defaultDashboardsTimezone: |
-        ${TIMEZONE}
+        "${TIMEZONE}"
       admin:
         existingSecret: "grafana-password"
         userKey: admin-user
