@@ -41,9 +41,10 @@ spec:
       enabled: true
       defaultDashboardsTimezone: |
         ${TIMEZONE}
-      adminPassword: null
       admin:
         existingSecret: "grafana-password"
+        userKey: admin-user
+        passwordKey: admin-password
       ingress:
         enabled: true
         ingressClassName: "traefik"
