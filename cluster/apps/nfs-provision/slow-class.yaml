@@ -2,8 +2,8 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: nfs-client
+  name: nfs-slow
   namespace: nfs-provision
-provisioner: local/nfs-provisioner # or choose another name, must match deployment's env PROVISIONER_NAME'
+provisioner: local/nfs-slow # or choose another name, must match deployment's env PROVISIONER_NAME'
 parameters:
   archiveOnDelete: "true"

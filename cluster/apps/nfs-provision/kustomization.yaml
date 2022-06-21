@@ -2,6 +2,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - class.yaml
-  - deployment.yaml
   - rbac.yaml
+  - flash-class.yaml
+  - flash-deployment.yaml
+  - slow-class.yaml
+  - slow-deployment.yaml

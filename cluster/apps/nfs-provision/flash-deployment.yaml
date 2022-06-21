@@ -1,0 +1,49 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nfs-flash-client
+  labels:
+    app: nfs-flash-client
+  # replace with namespace where provisioner is deployed
+  namespace: nfs-provision
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: nfs-flash-client
+  template:
+    metadata:
+      labels:
+        app: nfs-flash-client
+    spec:
+      serviceAccountName: nfs-client-provisioner # from rbac.yaml
+      containers:
+        - name: nfs-flash-client
+          image: k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2
+          volumeMounts:
+            - name: nfs-client-root
+              mountPath: /persistentvolumes
+          env:
+            - name: PROVISIONER_NAME
+              value: local/nfs-flash
+            - name: NFS_SERVER
+              value: 192.168.178.8
+            - name: NFS_PATH
+              value: /mnt/lighting/flash/k3s
+            - name: ENABLE_LEADER_ELECTION
+              value: "false"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 100m
+              memory: 128Mi
+      volumes:
+        - name: nfs-client-root
+          nfs:
+            server: 192.168.178.8
+            path: /mnt/lighting/flash/k3s
