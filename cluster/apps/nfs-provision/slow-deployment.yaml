@@ -28,7 +28,7 @@ spec:
               mountPath: /persistentvolumes
           env:
             - name: PROVISIONER_NAME
-              value: local/nfs-provisioner
+              value: local/nfs-slow
             - name: NFS_SERVER
               value: 192.168.178.8
             - name: NFS_PATH
