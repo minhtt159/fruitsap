@@ -32,7 +32,7 @@ spec:
             - name: NFS_SERVER
               value: 192.168.178.8
             - name: NFS_PATH
-              value: /mnt/storage/DATA/k3s-slow
+              value: /mnt/storage/DATA/k3s
             - name: ENABLE_LEADER_ELECTION
               value: "false"
           resources:
@@ -46,4 +46,4 @@ spec:
         - name: nfs-client-root
           nfs:
             server: 192.168.178.8
-            path: /mnt/storage/DATA/k3s-slow
+            path: /mnt/storage/DATA/k3s
