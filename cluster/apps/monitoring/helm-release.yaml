@@ -35,7 +35,7 @@ spec:
             cpu: 500m
             memory: 2048Mi
         nodeSelector:
-          node-role.kubernetes.io/control-plane: true
+          node-role.kubernetes.io/control-plane: "true"
         podMonitorNamespaceSelector: {}
         podMonitorSelector:
           matchLabels:
