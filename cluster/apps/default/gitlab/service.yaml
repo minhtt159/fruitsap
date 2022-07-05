@@ -8,6 +8,6 @@ spec:
   type: ClusterIP
   clusterIP: None
   ports:
-    - port: 80
+    - port: 443
       protocol: TCP
-      targetPort: 15080
+      targetPort: 15443
