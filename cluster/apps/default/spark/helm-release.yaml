@@ -1,0 +1,20 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: spark
+  namespace: default
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: spark
+      version: "6.1.x"
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: flux-system
+      interval: 5m
+  spec:
+    global:
+      storageClass: nfs-flash
