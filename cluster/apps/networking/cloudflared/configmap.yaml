@@ -42,9 +42,13 @@ data:
       originRequest:
         originServerName: traefik.teamkhunglong.com
     - hostname: echo-server.teamkhunglong.com
-      service: http://echo-server.teamkhunglong.com
+      service: https://192.168.178.51
+      originRequest:
+        originServerName: echo-server.teamkhunglong.com
     - hostname: flux-receiver.teamkhunglong.com
-      service: https://flux-receiver.teamkhunglong.com
+      service: https://192.168.178.51
+      originRequest:
+        originServerName: flux-receiver.teamkhunglong.com
     - hostname: hajimari.teamkhunglong.com
       service: https://192.168.178.51
       originRequest:
