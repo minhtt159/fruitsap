@@ -38,7 +38,7 @@ data:
       service: hello_world
     # -------------------- TODO: MAKE THIS CONFIGURABLE -----------------------------------------
     - hostname: traefik.teamkhunglong.com
-      service: https://traefik.teamkhunglong.com
+      service: http://traefik
     - hostname: echo-server.teamkhunglong.com
       service: http://echo-server.teamkhunglong.com
     - hostname: flux-receiver.teamkhunglong.com
