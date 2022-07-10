@@ -38,7 +38,7 @@ data:
       service: hello_world
     # -------------------- TODO: MAKE THIS CONFIGURABLE -----------------------------------------
     - hostname: traefik.teamkhunglong.com
-      service: http://traefik
+      service: https://192.168.178.51
       originRequest:
         originServerName: traefik.teamkhunglong.com
     - hostname: echo-server.teamkhunglong.com
@@ -46,7 +46,9 @@ data:
     - hostname: flux-receiver.teamkhunglong.com
       service: https://flux-receiver.teamkhunglong.com
     - hostname: hajimari.teamkhunglong.com
-      service: https://hajimari.teamkhunglong.com
+      service: https://192.168.178.51
+      originRequest:
+        originServerName: hajimari.teamkhunglong.com
     - hostname: proxmox.teamkhunglong.com
       service: https://proxmox-dashboard.default:8006
       originRequest:
