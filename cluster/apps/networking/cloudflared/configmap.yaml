@@ -39,6 +39,8 @@ data:
     # -------------------- TODO: MAKE THIS CONFIGURABLE -----------------------------------------
     - hostname: traefik.teamkhunglong.com
       service: http://traefik
+      originRequest:
+        originServerName: traefik.teamkhunglong.com
     - hostname: echo-server.teamkhunglong.com
       service: http://echo-server.teamkhunglong.com
     - hostname: flux-receiver.teamkhunglong.com
