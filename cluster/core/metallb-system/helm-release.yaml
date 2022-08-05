@@ -15,16 +15,15 @@ spec:
         name: metallb
         namespace: flux-system
   install:
+    crds: CreateReplace
     createNamespace: true
     remediation:
       retries: 3
+  targetNamespace: metallb-system
   upgrade:
+    crds: CreateReplace
     remediation:
       retries: 3
+      remediateLastFailure: true
   values:
-    configInline:
-      address-pools:
-        - name: default
-          protocol: layer2
-          addresses:
-            - "${METALLB_LB_RANGE}"
+    fullnameOverride: metallb
