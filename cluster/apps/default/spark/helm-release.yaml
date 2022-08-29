@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: spark
-      version: "6.2.x"
+      version: "6.3.x"
       sourceRef:
         kind: HelmRepository
         name: bitnami
