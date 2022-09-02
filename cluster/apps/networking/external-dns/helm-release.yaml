@@ -39,7 +39,7 @@ spec:
     sources:
       - ingress
     txtPrefix: "k8s."
-    txtOwnerId: "default"
+    txtOwnerId: "fruitsap"
     domainFilters:
       - "${SECRET_DOMAIN}"
     resources:
