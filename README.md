@@ -9,8 +9,8 @@ The purpose here is to showcase how you can deploy an entire Kubernetes cluster 
 - [Introduction](https://github.com/k8s-at-home/flux-cluster-template#-introduction)
 - [Prerequisites](https://github.com/k8s-at-home/flux-cluster-template#-prerequisites)
 - [Repository structure](https://github.com/k8s-at-home/flux-cluster-template#-repository-structure)
-- [Lets go!](https://github.com/k8s-at-home/flux-cluster-template#-lets-go)
-- [Post installation](https://github.com/k8s-at-home/flux-cluster-template#-post-installation)
+- [Let's go!](https://github.com/k8s-at-home/flux-cluster-template#-lets-go)
+- [Post-installation](https://github.com/k8s-at-home/flux-cluster-template#-post-installation)
 - [Troubleshooting](https://github.com/k8s-at-home/flux-cluster-template#-troubleshooting)
 - [What's next](https://github.com/k8s-at-home/flux-cluster-template#-whats-next)
 - [Thanks](https://github.com/k8s-at-home/flux-cluster-template#-thanks)
@@ -26,7 +26,7 @@ The following components will be installed in your [k3s](https://k3s.io/) cluste
 - [calico](https://www.tigera.io/project-calico/) - Container networking interface for inter pod and service networking
 - [external-dns](https://github.com/kubernetes-sigs/external-dns) - Operator to publish DNS records to Cloudflare (and other providers) based on Kubernetes ingresses
 - [k8s_gateway](https://github.com/ori-edge/k8s_gateway) - DNS resolver that provides local DNS to your Kubernetes ingresses
-- [traefik](https://traefik.io) - Kubernetes ingress controller used for a HTTP reverse proxy of Kubernetes ingresses
+- [traefik](https://traefik.io) - Kubernetes ingress controller used for an HTTP reverse proxy of Kubernetes ingresses
 - [local-path-provisioner](https://github.com/rancher/local-path-provisioner) - provision persistent local storage with Kubernetes
 
 _Additional applications include [hajimari](https://github.com/toboshii/hajimari), [error-pages](https://github.com/tarampampam/error-pages), [echo-server](https://github.com/Ealenn/Echo-Server), [system-upgrade-controller](https://github.com/rancher/system-upgrade-controller), [reflector](https://github.com/emberstack/kubernetes-reflector), [reloader](https://github.com/stakater/Reloader), and [kured](https://github.com/weaveworks/kured)_
@@ -39,21 +39,21 @@ For provisioning the following tools will be used:
 
 ## 📝 Prerequisites
 
-**Note:** _This template has not been tested on cloud providers like AWS EC2, Hetzner, Scaleway etc... Those cloud offerings probably have a better way of provsioning a Kubernetes cluster and it's advisable to use those instead of the Ansible playbooks included here. This repository can still be used for the GitOps/Flux portion if there's a cluster working in one those environments._
+**Note:** _This template has not been tested on cloud providers like AWS EC2, Hetzner, Scaleway etc... Those cloud offerings probably have a better way of provisioning a Kubernetes cluster and it's advisable to use those instead of the Ansible playbooks included here. This repository can still be used for the GitOps/Flux portion if there's a cluster working in one of those environments._
 
 ### 💻 Systems
 
 - One or more nodes with a fresh install of [Ubuntu Server 22.04](https://ubuntu.com/download/server).
   - These nodes can be ARM64/AMD64 bare metal or VMs.
   - An odd number of control plane nodes, greater than or equal to 3 is required if deploying more than one control plane node.
-- A [Cloudflare](https://www.cloudflare.com/) account with a domain, this will be managed by Terraform and external-dns. You can [register new domains](https://www.cloudflare.com/products/registrar/) directly thru Cloudflare.
+- A [Cloudflare](https://www.cloudflare.com/) account with a domain will be managed by Terraform and external-dns. You can [register new domains](https://www.cloudflare.com/products/registrar/) directly thru Cloudflare.
 - Some experience in debugging problems and a positive attitude ;)
 
 📍 It is recommended to have 3 master nodes for a highly available control plane.
 
 ### 🔧 Workstation Tools
 
-1. Install the **most recent versions** of the following CLI tools on your workstation, if you are using [Homebrew](https://brew.sh/) on MacOS or Linux skip to steps 3 and 4.
+1. Install the **most recent versions** of the following CLI tools on your workstation, if you are using [Homebrew](https://brew.sh/) on macOS or Linux skip to steps 3 and 4.
 
     * Required: [age](https://github.com/FiloSottile/age), [ansible](https://www.ansible.com), [flux](https://toolkit.fluxcd.io/), [gitleaks](https://github.com/zricethezav/gitleaks), [go-task](https://github.com/go-task/task), [ipcalc](http://jodies.de/ipcalc), [jq](https://stedolan.github.io/jq/), [kubectl](https://kubernetes.io/docs/tasks/tools/), [pre-commit](https://github.com/pre-commit/pre-commit), [sops](https://github.com/mozilla/sops), [terraform](https://www.terraform.io), [yq](https://github.com/mikefarah/yq)
 
@@ -216,7 +216,7 @@ In order to use Terraform and `cert-manager` with the Cloudflare DNS challenge y
 
 ### ⛵ Installing k3s with Ansible
 
-📍 Here we will be running a Ansible Playbook to install [k3s](https://k3s.io/) with [this](https://galaxy.ansible.com/xanmanning/k3s) wonderful k3s Ansible galaxy role. After completion, Ansible will drop a `kubeconfig` in `./provision/kubeconfig` for use with interacting with your cluster with `kubectl`.
+📍 Here we will be running an Ansible Playbook to install [k3s](https://k3s.io/) with [this](https://galaxy.ansible.com/xanmanning/k3s) wonderful k3s Ansible galaxy role. After completion, Ansible will drop a `kubeconfig` in `./provision/kubeconfig` for use with interacting with your cluster with `kubectl`.
 
 ☢️ If you run into problems, you can run `task ansible:nuke` to destroy the k3s cluster and start over.
 
@@ -271,7 +271,7 @@ If your domain already has existing DNS records **be sure to export those DNS se
     task terraform:apply
     ```
 
-If Terraform was ran successfully you can log into Cloudflare and validate the DNS records are present.
+If Terraform was run successfully you can log into Cloudflare and validate the DNS records are present.
 
 The cluster application [external-dns](https://github.com/kubernetes-sigs/external-dns) will be managing the rest of the DNS records you will need.
 
@@ -280,16 +280,7 @@ The cluster application [external-dns](https://github.com/kubernetes-sigs/extern
 📍 Here we will be installing [flux](https://toolkit.fluxcd.io/) after some quick bootstrap steps.
 
 1. Verify Flux can be installed
-
-    ```sh
-    task cluster:verify
-    # ► checking prerequisites
-    # ✔ kubectl 1.21.5 >=1.18.0-0
-    # ✔ Kubernetes 1.21.5+k3s1 >=1.16.0-0
-    # ✔ prerequisites checks passed
-    ```
-
-2. Push you changes to git
+Push your changes to git
 
     📍 **Verify** all the `*.sops.yaml` and `*.sops.yml` files under the `./cluster` and `./provision` folders are **encrypted** with SOPS
 
