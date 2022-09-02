@@ -33,7 +33,7 @@ _Additional applications include [hajimari](https://github.com/toboshii/hajimari
 
 For provisioning the following tools will be used:
 
-- [Ubuntu](https://ubuntu.com/download/server) - Universal operating system that supports running all kinds of home related workloads in Kubernetes
+- [Ubuntu](https://ubuntu.com/download/server) - Universal operating system that supports running all kinds of home-related workloads in Kubernetes
 - [Ansible](https://www.ansible.com) - Provision the Ubuntu OS and install k3s
 - [Terraform](https://www.terraform.io) - Provision an already existing Cloudflare domain and certain DNS records to be used with your k3s cluster
 
@@ -92,7 +92,7 @@ It is advisable to install [pre-commit](https://pre-commit.com/) and the pre-com
 
 ## 📂 Repository structure
 
-The Git repository contains the following directories under `cluster` and are ordered below by how Flux will apply them.
+The Git repository contains the following directories under `cluster` and is ordered below by how Flux will apply them.
 
 ```sh
 📁 cluster      # k8s cluster defined as code
@@ -104,19 +104,19 @@ The Git repository contains the following directories under `cluster` and are or
 └─📁 apps       # regular apps, namespaced dir tree, loaded last
 ```
 
-## 🚀 Lets go
+## 🚀 Let's go
 
-Very first step will be to create a new repository by clicking the **Use this template** button on this page.
+The very first step will be to create a new repository by clicking the **Use this template** button on this page.
 
-Clone the repo to you local workstation and `cd` into it.
+Clone the repo to your local workstation and `cd` into it.
 
 📍 **All of the below commands** are run on your **local** workstation, **not** on any of your cluster nodes.
 
 ### 🔐 Setting up Age
 
-📍 Here we will create a Age Private and Public key. Using [SOPS](https://github.com/mozilla/sops) with [Age](https://github.com/FiloSottile/age) allows us to encrypt secrets and use them in Ansible, Terraform and Flux.
+📍 Here we will create an Age Private and Public key. Using [SOPS](https://github.com/mozilla/sops) with [Age](https://github.com/FiloSottile/age) allows us to encrypt secrets and use them in Ansible, Terraform and Flux.
 
-1. Create a Age Private / Public Key
+Create an Age Private / Public Key
 
     ```sh
     age-keygen -o age.agekey
@@ -140,19 +140,19 @@ Clone the repo to you local workstation and `cd` into it.
 
 ### ☁️ Global Cloudflare API Key
 
-In order to use Terraform and `cert-manager` with the Cloudflare DNS challenge you will need to create a API key.
+To use Terraform and `cert-manager` with the Cloudflare DNS challenge you will need to create an API key.
 
-1. Head over to Cloudflare and create a API key by going [here](https://dash.cloudflare.com/profile/api-tokens).
+1. Head over to Cloudflare and create an API key by going [here](https://dash.cloudflare.com/profile/api-tokens).
 
 2. Under the `API Keys` section, create a global API Key.
 
 3. Use the API Key in the configuration section below.
 
-📍 You may wish to update this later on to a Cloudflare **API Token** which can be scoped to certain resources. I do not recommend using a Cloudflare **API Key**, however for the purposes of this template it is easier getting started without having to define which scopes and resources are needed. For more information see the [Cloudflare docs on API Keys and Tokens](https://developers.cloudflare.com/api/).
+📍 You may wish to update this later on to a Cloudflare **API Token** which can be scoped to certain resources. I do not recommend using a Cloudflare **API Key**, however for this template it is easier to get started without having to define which scopes and resources are needed. For more information see the [Cloudflare docs on API Keys and Tokens](https://developers.cloudflare.com/api/).
 
 ### 📄 Configuration
 
-📍 The `.config.env` file contains necessary configuration that is needed by Ansible, Terraform and Flux.
+📍 The `.config.env` file contains the necessary configuration that is needed by Ansible, Terraform and Flux.
 
 1. Copy the `.config.sample.env` to `.config.env` and start filling out all the environment variables.
 
@@ -176,7 +176,7 @@ In order to use Terraform and `cert-manager` with the Cloudflare DNS challenge y
 
 ### ⚡ Preparing Ubuntu with Ansible
 
-📍 Here we will be running a Ansible Playbook to prepare Ubuntu for running a Kubernetes cluster.
+📍 Here we will be running an Ansible Playbook to prepare Ubuntu for running a Kubernetes cluster.
 
 📍 Nodes are not security hardened by default, you can do this with [dev-sec/ansible-collection-hardening](https://github.com/dev-sec/ansible-collection-hardening) or similar if it supports Ubuntu 22.04.
 

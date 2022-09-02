@@ -38,19 +38,19 @@ data:
       service: hello_world
     # -------------------- TODO: MAKE THIS CONFIGURABLE -----------------------------------------
     - hostname: traefik.teamkhunglong.com
-      service: https://192.168.178.51
+      service: https://{METALLB_TRAEFIK_ADDR}
       originRequest:
         originServerName: traefik.teamkhunglong.com
     - hostname: echo-server.teamkhunglong.com
-      service: https://192.168.178.51
+      service: https://{METALLB_TRAEFIK_ADDR}
       originRequest:
         originServerName: echo-server.teamkhunglong.com
     - hostname: flux-receiver.teamkhunglong.com
-      service: https://192.168.178.51
+      service: https://{METALLB_TRAEFIK_ADDR}
       originRequest:
         originServerName: flux-receiver.teamkhunglong.com
     - hostname: hajimari.teamkhunglong.com
-      service: https://192.168.178.51
+      service: https://{METALLB_TRAEFIK_ADDR}
       originRequest:
         originServerName: hajimari.teamkhunglong.com
     - hostname: proxmox.teamkhunglong.com
