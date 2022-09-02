@@ -69,7 +69,7 @@ spec:
         ingressClassName: "traefik"
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-production"
-          external-dns.alpha.kubernetes.io/target: "{SECRET_CLOUDFLARE_TUNNELID}.cfargotunnel.com"
+          external-dns.alpha.kubernetes.io/target: "${SECRET_CLOUDFLARE_TUNNELID}.cfargotunnel.com"
           external-dns/is-public: "true"
           hajimari.io/enable: "true"
           hajimari.io/icon: "video-input-antenna"
