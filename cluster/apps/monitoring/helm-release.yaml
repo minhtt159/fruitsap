@@ -51,7 +51,7 @@ spec:
           hajimari.io/appName: "Grafana"
           hajimari.io/icon: "chart-bar"
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-          traefik.ingress.kubernetes.io/router.middlewares: "networking-cloudflare-only@kubernetescrd"
+          traefik.ingress.kubernetes.io/router.middlewares: "networking-internal-only@kubernetescrd"
         hosts:
           - "grafana.${SECRET_DOMAIN}"
         tls:
