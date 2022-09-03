@@ -45,6 +45,8 @@ spec:
         ingressClassName: "traefik"
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-staging"
+          external-dns.alpha.kubernetes.io/target: "${SECRET_CLOUDFLARE_TUNNELID}.cfargotunnel.com"
+          external-dns/is-public: "true"
           hajimari.io/enable: "true"
           hajimari.io/appName: "Grafana"
           hajimari.io/icon: "chart-bar"

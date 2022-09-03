@@ -1,4 +1,3 @@
-# This is currently broken with v1.23.6+k3s1
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -7,6 +6,8 @@ metadata:
   namespace: default
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production" # Overwrite certificate OR skip certificate
+    external-dns.alpha.kubernetes.io/target: "${SECRET_CLOUDFLARE_TUNNELID}.cfargotunnel.com"
+    external-dns/is-public: "true"
     traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
     traefik.ingress.kubernetes.io/router.middlewares: "networking-cloudflare-only@kubernetescrd"
 spec:
