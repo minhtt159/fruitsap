@@ -18,9 +18,13 @@ spec:
   install:
     createNamespace: true
   values:
+    # The interval for DNS updates.
     interval: 5m
+    # panic, debug, info, warning, error, fatal.
     logLevel: debug
+    # provider
     provider: cloudflare
+    # env
     env:
       - name: CF_API_EMAIL
         valueFrom:
@@ -32,19 +36,29 @@ spec:
           secretKeyRef:
             name: external-dns-cloud-credentials
             key: api-key
+    # provider-specific args
     extraArgs:
       - --cloudflare-proxied
       - --annotation-filter=external-dns/is-public in (true)
-    policy: sync
-    sources:
+    policy: sync # or upsert-only
+    sources:  # K8s resources type to be observed for new DNS entries.
       - ingress
+    # Prefix to create a TXT record with a name following the pattern prefix.<CNAME record>.
     txtPrefix: "k8s."
+    # TXT registry identifier.
     txtOwnerId: "fruitsap"
+    # Limit possible target zones by domain suffixes.
     domainFilters:
       - "${SECRET_DOMAIN}"
+    #
     resources:
       requests:
         memory: 100Mi
         cpu: 25m
       limits:
         memory: 250Mi
+    # Prometheus service monitor
+    serviceMonitor:
+      enabled: false
+      interval: 1m
+      scrapeTimeout: 10s
