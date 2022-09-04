@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: cloudflared
-          image: milgradesec/cloudflared:latest
+          image: cloudflared/cloudflared:latest
           args:
             - tunnel
             # Points cloudflared to the config file, which configures what
