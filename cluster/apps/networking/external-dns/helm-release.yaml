@@ -40,7 +40,6 @@ spec:
     extraArgs:
       - --cloudflare-proxied
       - --annotation-filter=external-dns/is-public in (true)
-      - --label-filter=external-dns/is-public in (true)
     policy: sync # or upsert-only
     sources:  # K8s resources type to be observed for new DNS entries.
       - ingress

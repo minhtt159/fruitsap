@@ -58,6 +58,7 @@ data:
       originRequest:
         originServerName: proxmox.teamkhunglong.com
         noTLSVerify: true
+    ######################## FOR KAFKA #############################
     - hostname: bootstrap-kafka.teamkhunglong.com
       service: https://${METALLB_TRAEFIK_ADDR}
       originRequest:
@@ -74,6 +75,7 @@ data:
       service: https://${METALLB_TRAEFIK_ADDR}
       originRequest:
         originServerName: broker-2.teamkhunglong.com
+    ################################################################
     # -------------------------------------------------------------------------------------------
     # This rule matches any traffic which didn't match a previous rule, and responds with HTTP 404.
     - service: http_status:404
