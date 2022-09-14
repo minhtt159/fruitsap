@@ -8,3 +8,4 @@ resources:
   - system-upgrade.yaml
   - nfs-provision.yaml
   - monitoring.yaml
+  - strimzi.yaml
