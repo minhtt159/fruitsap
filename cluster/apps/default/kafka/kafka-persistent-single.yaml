@@ -25,8 +25,8 @@ spec:
         tls: true
         configuration:
           bootstrap:
-            labels:
-              external-dns.alpha.kubernetes.io/hostname: bootstrap-kafka.teamkhunglong.com.
+            annotations:
+              # external-dns.alpha.kubernetes.io/hostname: bootstrap-kafka.teamkhunglong.com.
               external-dns.alpha.kubernetes.io/ttl: "60"
               external-dns/is-public: "true"
               external-dns.alpha.kubernetes.io/target: "${SECRET_CLOUDFLARE_TUNNELID}.cfargotunnel.com"
@@ -35,8 +35,8 @@ spec:
             host: bootstrap-kafka.teamkhunglong.com
           brokers:
             - broker: 0
-              labels:
-                external-dns.alpha.kubernetes.io/hostname: broker-0.teamkhunglong.com.
+              annotations:
+                # external-dns.alpha.kubernetes.io/hostname: broker-0.teamkhunglong.com.
                 external-dns.alpha.kubernetes.io/ttl: "60"
                 external-dns/is-public: "true"
                 external-dns.alpha.kubernetes.io/target: "${SECRET_CLOUDFLARE_TUNNELID}.cfargotunnel.com"
@@ -44,8 +44,8 @@ spec:
                 traefik.ingress.kubernetes.io/router.middlewares: "networking-cloudflare-only@kubernetescrd"
               host: broker-0.teamkhunglong.com
             - broker: 1
-              labels:
-                external-dns.alpha.kubernetes.io/hostname: broker-1.teamkhunglong.com.
+              annotations:
+                # external-dns.alpha.kubernetes.io/hostname: broker-1.teamkhunglong.com.
                 external-dns.alpha.kubernetes.io/ttl: "60"
                 external-dns/is-public: "true"
                 external-dns.alpha.kubernetes.io/target: "${SECRET_CLOUDFLARE_TUNNELID}.cfargotunnel.com"
@@ -53,8 +53,8 @@ spec:
                 traefik.ingress.kubernetes.io/router.middlewares: "networking-cloudflare-only@kubernetescrd"
               host: broker-1.teamkhunglong.com
             - broker: 2
-              labels:
-                external-dns.alpha.kubernetes.io/hostname: broker-2.teamkhunglong.com.
+              annotations:
+                # external-dns.alpha.kubernetes.io/hostname: broker-2.teamkhunglong.com.
                 external-dns.alpha.kubernetes.io/ttl: "60"
                 external-dns/is-public: "true"
                 external-dns.alpha.kubernetes.io/target: "${SECRET_CLOUDFLARE_TUNNELID}.cfargotunnel.com"
