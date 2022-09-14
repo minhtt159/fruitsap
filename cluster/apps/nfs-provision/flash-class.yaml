@@ -4,6 +4,8 @@ kind: StorageClass
 metadata:
   name: nfs-flash
   namespace: nfs-provision
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
 provisioner: local/nfs-flash # or choose another name, must match deployment's env PROVISIONER_NAME'
 parameters:
   archiveOnDelete: "true"
