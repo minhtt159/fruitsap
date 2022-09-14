@@ -1,0 +1,19 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: my-cluster-lets-encrypt
+spec:
+  secretName: my-cluster-lets-encrypt
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
+    group: cert-manager.io
+  subject:
+    organizations:
+      - my-org
+  dnsNames:
+    - bootstrap-kafka.teamkhunglong.com
+    - broker-0.teamkhunglong.com
+    - broker-1.teamkhunglong.com
+    - broker-2.teamkhunglong.com
