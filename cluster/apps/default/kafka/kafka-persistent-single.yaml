@@ -65,7 +65,7 @@ spec:
           size: 10Gi
           deleteClaim: true
   zookeeper:
-    replicas: 1
+    replicas: 3
     storage:
       type: persistent-claim
       size: 10Gi
