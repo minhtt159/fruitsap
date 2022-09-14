@@ -1,0 +1,6 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  # renovate: registryUrl=https://strimzi.io/charts/ chart=strimzi-kafka-operator
+  - https://github.com/strimzi/strimzi-kafka-operator/releases/download/0.31.0/strimzi-crds-0.31.0.yaml

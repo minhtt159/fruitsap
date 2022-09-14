@@ -16,3 +16,4 @@ resources:
   - traefik.yaml
   - weaveworks-kured.yaml
   - eck.yaml
+  - strimzi.yaml
