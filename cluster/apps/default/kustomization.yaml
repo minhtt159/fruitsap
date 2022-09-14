@@ -6,4 +6,4 @@ resources:
   - hajimari
   - proxmox
   # - spark
-  # - kafka
+  - kafka
