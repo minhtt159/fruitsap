@@ -24,6 +24,7 @@ spec:
         type: ingress
         tls: true
         configuration:
+          class: "traefik"
           bootstrap:
             annotations:
               # external-dns.alpha.kubernetes.io/hostname: bootstrap-kafka.teamkhunglong.com.
