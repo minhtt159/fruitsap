@@ -24,11 +24,7 @@ spec:
         type: loadbalancer
         tls: true
         authentication:
-          type: scram-sha-512
-          username: minhtt159
-          passwordSecret:
-            secretName: my-connect-secret-kafka
-            password: my-password-field-kafka
+          type: tls
         configuration:
           # class: "traefik"
           bootstrap:
