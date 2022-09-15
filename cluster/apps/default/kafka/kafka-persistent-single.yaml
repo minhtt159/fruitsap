@@ -23,6 +23,8 @@ spec:
         port: 9094
         type: loadbalancer
         tls: true
+        authentication:
+          type: tls
         configuration:
           # class: "traefik"
           bootstrap:
