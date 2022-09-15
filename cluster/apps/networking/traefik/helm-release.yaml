@@ -71,7 +71,7 @@ spec:
       websecure:
         tls:
           # Test TLS disabled by default
-          enabled: false
+          enabled: true
           options: "default"
       metrics:
         port: 8082
