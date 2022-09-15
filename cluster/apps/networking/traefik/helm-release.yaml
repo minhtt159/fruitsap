@@ -64,12 +64,14 @@ spec:
       - "--providers.kubernetescrd.allowexternalnameservices=true"
     ports:
       traefik:
+        # Find another way to expose dashboard
         expose: true
       web:
         redirectTo: websecure
       websecure:
         tls:
-          enabled: true
+          # Test TLS disabled by default
+          enabled: false
           options: "default"
       metrics:
         port: 8082
