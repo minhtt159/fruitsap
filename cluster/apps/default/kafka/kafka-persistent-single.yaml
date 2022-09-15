@@ -27,8 +27,7 @@ spec:
           # class: "traefik"
           bootstrap:
             annotations:
-              metallb.universe.tf/loadBalancerIPs:
-                - 192.168.178.52
+              metallb.universe.tf/loadBalancerIPs: "192.168.178.52"
               # external-dns.alpha.kubernetes.io/hostname: bootstrap-kafka.teamkhunglong.com.
               # external-dns.alpha.kubernetes.io/ttl: "60"
               # external-dns/is-public: "true"
@@ -38,12 +37,11 @@ spec:
               # traefik.ingress.kubernetes.io/router.tls: "false"
             alternativeNames:
               - bootstrap-kafka.teamkhunglong.com
-            loadBalancerIP: 192.168.178.52
+            loadBalancerIP: "192.168.178.52"
           brokers:
             - broker: 0
               annotations:
-                metallb.universe.tf/loadBalancerIPs:
-                  - 192.168.178.53
+                metallb.universe.tf/loadBalancerIPs: "192.168.178.53"
                 # external-dns.alpha.kubernetes.io/hostname: broker-0.teamkhunglong.com.
                 # external-dns.alpha.kubernetes.io/ttl: "60"
                 # external-dns/is-public: "true"
@@ -53,11 +51,10 @@ spec:
                 # traefik.ingress.kubernetes.io/router.tls: "false"
                 # traefik.ingress.kubernetes.io/router.tls.options: "{}"
               advertisedHost: broker-0.teamkhunglong.com
-              loadBalancerIP: 192.168.178.53
+              loadBalancerIP: "192.168.178.53"
             - broker: 1
               annotations:
-                metallb.universe.tf/loadBalancerIPs:
-                  - 192.168.178.54
+                metallb.universe.tf/loadBalancerIPs: "192.168.178.54"
                 # external-dns.alpha.kubernetes.io/hostname: broker-1.teamkhunglong.com.
                 # external-dns.alpha.kubernetes.io/ttl: "60"
                 # external-dns/is-public: "true"
@@ -69,8 +66,7 @@ spec:
               loadBalancerIP: 192.168.178.54
             - broker: 2
               annotations:
-                metallb.universe.tf/loadBalancerIPs:
-                  - 192.168.178.55
+                metallb.universe.tf/loadBalancerIPs: "192.168.178.55"
                 # external-dns.alpha.kubernetes.io/hostname: broker-2.teamkhunglong.com.
                 # external-dns.alpha.kubernetes.io/ttl: "60"
                 # external-dns/is-public: "true"
@@ -79,7 +75,7 @@ spec:
                 # traefik.ingress.kubernetes.io/router.middlewares: "networking-cloudflare-only@kubernetescrd"
                 # traefik.ingress.kubernetes.io/router.tls: "false"
               advertisedHost: broker-2.teamkhunglong.com
-              loadBalancerIP: 192.168.178.55
+              loadBalancerIP: "192.168.178.55"
           brokerCertChainAndKey:
             secretName: my-cluster-lets-encrypt
             certificate: tls.crt
