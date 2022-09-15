@@ -76,10 +76,10 @@ spec:
             secretName: my-cluster-lets-encrypt
             certificate: tls.crt
             key: tls.key
-    authorization:
-      type: "simple"
-      superUsers:
-        - "minhtt159"
+    # authorization:
+    #   type: "simple"
+    #   superUsers:
+    #     - "minhtt159"
     config:
       auto.create.topics.enable: "false"
       offsets.topic.replication.factor: 3
