@@ -24,7 +24,7 @@ spec:
         type: loadbalancer
         tls: true
         configuration:
-          class: "traefik"
+          # class: "traefik"
           bootstrap:
             annotations:
               metallb.universe.tf/loadBalancerIPs: 192.168.178.52
