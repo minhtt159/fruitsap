@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - cert-kafka.yaml
   - kafka-persistent-single.yaml
+  - secret.sops.yaml
