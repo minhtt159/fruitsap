@@ -44,7 +44,7 @@ spec:
                 external-dns.alpha.kubernetes.io/target: "${SECRET_CLOUDFLARE_TUNNELID}.cfargotunnel.com"
                 traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
                 # traefik.ingress.kubernetes.io/router.middlewares: "networking-cloudflare-only@kubernetescrd"
-                traefik.ingress.kubernetes.io/router.tls: "false"
+                traefik.ingress.kubernetes.io/router.tls.enabled: "false"
               host: broker-0.teamkhunglong.com
             - broker: 1
               annotations:
