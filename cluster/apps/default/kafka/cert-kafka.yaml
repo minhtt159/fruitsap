@@ -7,7 +7,7 @@ metadata:
 spec:
   secretName: my-cluster-lets-encrypt
   issuerRef:
-    name: letsencrypt-staging
+    name: letsencrypt-production
     kind: ClusterIssuer
     group: cert-manager.io
   subject:
@@ -15,6 +15,3 @@ spec:
       - my-org
   dnsNames:
     - bootstrap-kafka.teamkhunglong.com
-    - broker-0.teamkhunglong.com
-    - broker-1.teamkhunglong.com
-    - broker-2.teamkhunglong.com
