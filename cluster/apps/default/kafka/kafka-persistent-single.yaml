@@ -73,7 +73,7 @@ spec:
             secretName: my-cluster-lets-encrypt
             certificate: tls.crt
             key: tls.key
-      - name: external
+      - name: external2
         port: 9095
         type: loadbalancer
         tls: false
