@@ -42,7 +42,7 @@ spec:
             secretName: my-cluster-lets-encrypt
             certificate: tls.crt
             key: tls.key
-      - name: external2
+      - name: e0tls
         port: 9095
         type: loadbalancer
         tls: false
@@ -50,7 +50,7 @@ spec:
           bootstrap:
             # alternativeNames:
             #   - bootstrap-kafka.teamkhunglong.com
-            loadBalancerIP: "192.168.178.56"
+            loadBalancerIP: "192.168.178.53"
     # authorization:
     #   type: "simple"
     #   superUsers:

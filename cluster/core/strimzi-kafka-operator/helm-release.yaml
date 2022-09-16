@@ -24,4 +24,4 @@ spec:
       retries: 3
   values:
     # https://github.com/strimzi/strimzi-kafka-operator/blob/main/helm-charts/helm3/strimzi-kafka-operator/values.yaml
-    logLevel: DEBUG
+    logLevel: INFO
