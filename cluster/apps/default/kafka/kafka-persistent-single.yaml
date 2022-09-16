@@ -79,27 +79,9 @@ spec:
         tls: false
         configuration:
           bootstrap:
-            # annotations:
-            #   external-dns.alpha.kubernetes.io/hostname: bootstrap-kafka.teamkhunglong.com.
             # alternativeNames:
             #   - bootstrap-kafka.teamkhunglong.com
             loadBalancerIP: "192.168.178.56"
-          brokers:
-            - broker: 0
-              # annotations:
-              #   external-dns.alpha.kubernetes.io/hostname: broker-0.teamkhunglong.com.
-              # advertisedHost: broker-0.teamkhunglong.com
-              loadBalancerIP: "192.168.178.57"
-            - broker: 1
-              # annotations:
-              #   external-dns.alpha.kubernetes.io/hostname: broker-1.teamkhunglong.com.
-              # advertisedHost: broker-1.teamkhunglong.com
-              loadBalancerIP: "192.168.178.58"
-            - broker: 2
-              # annotations:
-              #   external-dns.alpha.kubernetes.io/hostname: broker-2.teamkhunglong.com.
-              # advertisedHost: broker-2.teamkhunglong.com
-              loadBalancerIP: "192.168.178.59"
     # authorization:
     #   type: "simple"
     #   superUsers:
