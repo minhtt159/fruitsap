@@ -5,5 +5,5 @@ metadata:
   name: hajimari
   namespace: flux-system
 spec:
-  interval: 1h
+  interval: 6h
   url: https://hajimari.io
