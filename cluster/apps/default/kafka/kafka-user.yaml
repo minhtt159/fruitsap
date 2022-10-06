@@ -2,6 +2,7 @@ apiVersion: kafka.strimzi.io/v1alpha1
 kind: KafkaUser
 metadata:
   name: my-user
+  namespace: strimzi
   labels:
     strimzi.io/cluster: my-cluster
 spec:
