@@ -5,3 +5,4 @@ resources:
   - cert-kafka.yaml
   - kafka-persistent-single.yaml
   - secret.sops.yaml
+  - kafka-user.yaml
