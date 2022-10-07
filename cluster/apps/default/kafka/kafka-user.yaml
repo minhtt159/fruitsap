@@ -13,12 +13,12 @@ spec:
     acls:
       - resource:
           type: topic
-          name: BA-raw-data
+          name: my-topic
           patternType: literal
         operation: Read
       - resource:
           type: topic
-          name: BA-raw-data
+          name: my-topic
           patternType: literal
         operation: Describe
       - resource:

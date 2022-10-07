@@ -69,7 +69,7 @@ spec:
       type: "simple"
       superUsers:
         - CN=my-user
-        - "minhtt159"
+        - minhtt159
     config:
       auto.create.topics.enable: "true"
       offsets.topic.replication.factor: 3
