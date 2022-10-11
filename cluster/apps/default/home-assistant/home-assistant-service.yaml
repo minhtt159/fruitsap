@@ -10,7 +10,6 @@ spec:
   ports:
     - protocol: TCP
       port: 8123
-      name: http
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -18,7 +17,7 @@ metadata:
   name: homeassistant-ingress
   namespace: homeassistant
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-staging" # Overwrite certificate OR skip certificate
+    cert-manager.io/cluster-issuer: "letsencrypt-production" # Overwrite certificate OR skip certificate
     # external-dns.alpha.kubernetes.io/target: "${SECRET_CLOUDFLARE_TUNNELID}.cfargotunnel.com"
     # external-dns/is-public: "true"
     traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
