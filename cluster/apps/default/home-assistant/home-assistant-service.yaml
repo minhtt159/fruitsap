@@ -24,8 +24,13 @@ metadata:
     traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
     traefik.ingress.kubernetes.io/router.middlewares: "networking-cloudflare-only@kubernetescrd"
 spec:
+  ingressClassName: "traefik"
+  tls:
+    - hosts:
+        - "home-assistant.${SECRET_DOMAIN}"
+      secretName: "home-assistant-tls"
   rules:
-    - host: home-assistant.teamkhunglong.com
+    - host: home-assistant.${SECRET_DOMAIN}
       http:
         paths:
           - pathType: Prefix
