@@ -8,5 +8,6 @@ resources:
   - system-upgrade.yaml
   - nfs-provision.yaml
   - monitoring.yaml
+  - metallb-system.yaml
   - strimzi.yaml
   - homeassistant.yaml
