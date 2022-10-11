@@ -6,3 +6,6 @@ resources:
   - secret.sops.yaml
   - deployment.yaml
   - home-assistant-service.yaml
+  - esphome-pvc.yaml
+  - esphome-deployment.yaml
+  - esphome-service.yaml
