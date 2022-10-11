@@ -9,3 +9,4 @@ resources:
   - nfs-provision.yaml
   - monitoring.yaml
   - strimzi.yaml
+  - homeassistant.yaml
