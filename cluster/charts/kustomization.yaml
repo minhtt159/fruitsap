@@ -14,6 +14,6 @@ resources:
   - prometheus-community.yaml
   - stakater.yaml
   - traefik.yaml
-  - weaveworks-kured.yaml
+  - kubereboot.yaml
   - eck.yaml
   - strimzi.yaml
