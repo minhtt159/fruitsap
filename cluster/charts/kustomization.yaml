@@ -17,3 +17,4 @@ resources:
   - kubereboot.yaml
   - eck.yaml
   - strimzi.yaml
+  - gitlab.yaml
