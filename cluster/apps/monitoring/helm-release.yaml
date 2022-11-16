@@ -202,7 +202,7 @@ spec:
               resources:
                 requests:
                   storage: 50Gi
-            selector: {}
+            # selector: {}
     ##
 
     ## Configuration for thanosRuler
