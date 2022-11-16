@@ -192,17 +192,17 @@ spec:
         podMonitorSelector:
           matchLabels:
             app.kubernetes.io/component: monitoring
-        storageSpec: {}
-        ## Using PersistentVolumeClaim
-        ##
-        #  volumeClaimTemplate:
-        #    spec:
-        #      storageClassName: gluster
-        #      accessModes: ["ReadWriteOnce"]
-        #      resources:
-        #        requests:
-        #          storage: 50Gi
-        #    selector: {}
+        storageSpec:
+          # Using PersistentVolumeClaim
+          #
+          volumeClaimTemplate:
+            spec:
+              storageClassName: nfs-flash
+              accessModes: ["ReadWriteOnce"]
+              resources:
+                requests:
+                  storage: 50Gi
+            selector: {}
     ##
 
     ## Configuration for thanosRuler
