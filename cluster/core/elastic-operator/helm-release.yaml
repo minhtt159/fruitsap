@@ -25,3 +25,5 @@ spec:
     # https://github.com/elastic/cloud-on-k8s/blob/2.3/deploy/eck-operator/values.yaml
     installCRDs: false
     fullnameOverride: "elastic-operator"
+    nodeSelector:
+      - kubernetes.io/arch: amd64
