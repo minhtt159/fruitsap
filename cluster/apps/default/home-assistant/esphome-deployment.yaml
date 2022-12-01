@@ -23,7 +23,7 @@ spec:
           persistentVolumeClaim:
             claimName: esphome-claim
       containers:
-        - image: esphome/esphome:2022.11.1
+        - image: esphome/esphome:2022.11.4
           name: esphome
           env:
             - name: ESPHOME_DASHBOARD_USE_PING
