@@ -26,4 +26,4 @@ spec:
     installCRDs: false
     fullnameOverride: "elastic-operator"
     nodeSelector:
-      - kubernetes.io/arch: amd64
+      kubernetes.io/arch: amd64
