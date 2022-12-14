@@ -1,0 +1,30 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-production"    # Overwrite certificate OR skip certificate
+    kubernetes.io/ingress.class: traefik
+    external-dns.alpha.kubernetes.io/target: "${SECRET_CLOUDFLARE_TUNNELID}.cfargotunnel.com"
+    # external-dns/is-public: "true"
+    traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+    traefik.ingress.kubernetes.io/router.middlewares: "networking-cloudflare-only@kubernetescrd"
+    traefik.ingress.kubernetes.io/router.tls: "true"
+  name: uptime-kuma-ingress
+  namespace: monitoring
+spec:
+  rules:
+    - host: uptimekuma.${SECRET_DOMAIN}
+      http:
+        paths:
+          - backend:
+              service:
+                name: uptime-kuma-service
+                port:
+                  number: 3001
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - uptimekuma.${SECRET_DOMAIN}
+      secretName: uptime-tls

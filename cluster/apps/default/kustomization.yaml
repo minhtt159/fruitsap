@@ -8,3 +8,4 @@ resources:
   # - spark
   - kafka
   - home-assistant
+  - uptime-kuma
