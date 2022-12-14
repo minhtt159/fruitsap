@@ -40,4 +40,4 @@ spec:
         resources:
           requests:
             storage: 2Gi
-        storageClassName: nfs-flash
+        storageClassName: local-path
