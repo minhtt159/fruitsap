@@ -7,5 +7,5 @@ resources:
   - proxmox
   # - spark
   - kafka
-  - home-assistant
+  # - home-assistant
   - uptime-kuma
