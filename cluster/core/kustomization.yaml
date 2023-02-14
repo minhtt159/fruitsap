@@ -6,5 +6,5 @@ resources:
   - cert-manager
   - kube-system
   - metallb-system
-  - elastic-operator
+  # - elastic-operator
   - strimzi-kafka-operator
