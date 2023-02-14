@@ -22,49 +22,47 @@ spec:
       - name: external
         port: 9094
         type: loadbalancer
-        tls: true
-        authentication:
-          type: tls
+        tls: false
         configuration:
           # class: "traefik"
           bootstrap:
             annotations:
               # metallb.universe.tf/loadBalancerIPs:
               #   - "192.168.178.52"
-              external-dns.alpha.kubernetes.io/hostname: bootstrap-kafka.teamkhunglong.com.
+              # external-dns.alpha.kubernetes.io/hostname: bootstrap-kafka.teamkhunglong.com.
               # external-dns.alpha.kubernetes.io/ttl: "60"
               # external-dns/is-public: "true"
               # external-dns.alpha.kubernetes.io/target: "${SECRET_CLOUDFLARE_TUNNELID}.cfargotunnel.com"
-            alternativeNames:
-              - bootstrap-kafka.teamkhunglong.com
-            loadBalancerIP: "192.168.178.52"
-          # brokers:
-          #   - broker: 0
-          #     loadBalancerIP: "192.168.178.54"
-          #   - broker: 1
-          #     loadBalancerIP: "192.168.178.55"
-          #   - broker: 2
-          #     loadBalancerIP: "192.168.178.56"
-          brokerCertChainAndKey:
-            secretName: my-cluster-lets-encrypt
-            certificate: tls.crt
-            key: tls.key
-      - name: e0tls
-        port: 9095
-        type: loadbalancer
-        tls: false
-        configuration:
-          bootstrap:
             # alternativeNames:
             #   - bootstrap-kafka.teamkhunglong.com
-            loadBalancerIP: "192.168.178.53"
+            loadBalancerIP: "192.168.178.52"
           brokers:
             - broker: 0
-              loadBalancerIP: "192.168.178.57"
+              loadBalancerIP: "192.168.178.54"
             - broker: 1
-              loadBalancerIP: "192.168.178.58"
+              loadBalancerIP: "192.168.178.55"
             - broker: 2
-              loadBalancerIP: "192.168.178.59"
+              loadBalancerIP: "192.168.178.56"
+          # brokerCertChainAndKey:
+          #   secretName: my-cluster-lets-encrypt
+          #   certificate: tls.crt
+          #   key: tls.key
+      # - name: e0tls
+      #   port: 9095
+      #   type: loadbalancer
+      #   tls: false
+      #   configuration:
+      #     bootstrap:
+      #       # alternativeNames:
+      #       #   - bootstrap-kafka.teamkhunglong.com
+      #       loadBalancerIP: "192.168.178.53"
+      #     brokers:
+      #       - broker: 0
+      #         loadBalancerIP: "192.168.178.57"
+      #       - broker: 1
+      #         loadBalancerIP: "192.168.178.58"
+      #       - broker: 2
+      #         loadBalancerIP: "192.168.178.59"
     # authorization:
     #   type: "simple"
     #   superUsers:
