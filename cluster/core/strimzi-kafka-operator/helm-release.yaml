@@ -16,7 +16,7 @@ spec:
         namespace: flux-system
       interval: 5m
   install:
-    createNamespace: true       # just to be sure
+    createNamespace: true # just to be sure
     remediation:
       retries: 3
   upgrade:
@@ -25,3 +25,6 @@ spec:
   values:
     # https://github.com/strimzi/strimzi-kafka-operator/blob/main/helm-charts/helm3/strimzi-kafka-operator/values.yaml
     logLevel: INFO
+    extraEnvs:
+      - name: STRIMZI_DEFAULT_CRUISE_CONTROL_IMAGE
+        value: ghcr.io/minhtt159/cruise-control-ui:kafka-3.3.2-ccfe-0.4.0
